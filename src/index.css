@@ -20,3 +20,11 @@ body {
   overflow: hidden;
   height: 100%;
 }
+
+.startGameButton:hover {
+  fill: #9e0979 !important;
+}
+
+.startGameButton:active {
+  transform: scale(0.9);
+}

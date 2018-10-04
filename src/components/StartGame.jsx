@@ -32,7 +32,9 @@ const StartGame = props => {
   return (
     <g filter="url(#shadow)">
       <rect {...button} />
-      <text {...text}>Fire away To Start!</text>
+      <text className="startGameButton" {...text}>
+        Fire away To Start!
+      </text>
     </g>
   );
 };
