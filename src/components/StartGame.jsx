@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { gameWidth } from "../utils/constans";
+import { gameWidth } from "../utils/constants";
 
 const StartGame = props => {
   const button = {

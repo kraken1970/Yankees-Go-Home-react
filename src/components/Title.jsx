@@ -8,27 +8,27 @@ const Title = () => {
     fill: "#cbca62"
   };
 
-  const yankeesLineCurve = {
+  const aliensLineCurve = {
     initialAxis: {
-      x: -240,
+      x: -220,
       y: -950
     },
     initialControlPoint: {
-      x: 120,
+      x: 95,
       y: -50
     },
     endingControlPoint: {
-      x: 460,
+      x: 285,
       y: -50
     },
     endingAxis: {
-      x: 500,
+      x: 480,
       y: 0
     }
   };
 
   const goHomeLineCurve = {
-    ...yankeesLineCurve,
+    ...aliensLineCurve,
     initialAxis: {
       x: -250,
       y: -780
@@ -50,11 +50,11 @@ const Title = () => {
   return (
     <g filter="url(#shadow)">
       <defs>
-        <path id="YankeesPath" d={pathFromBezierCurve(yankeesLineCurve)} />
+        <path id="AliensPath" d={pathFromBezierCurve(aliensLineCurve)} />
         <path id="GoHomePath" d={pathFromBezierCurve(goHomeLineCurve)} />
       </defs>
       <text {...textStyle}>
-        <textPath xlinkHref="#YankeesPath">Yankees,</textPath>
+        <textPath xlinkHref="#AliensPath">Yankees,</textPath>
       </text>
       <text {...textStyle}>
         <textPath xlinkHref="#GoHomePath">Go Home!</textPath>

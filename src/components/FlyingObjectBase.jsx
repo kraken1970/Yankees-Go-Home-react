@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const FlyingObjectBase = props => {
+const FlyingObjectBase = (props) => {
   const style = {
-    fill: "#979797",
-    stroke: "#5c5c5c"
+    fill: '#979797',
+    stroke: '#5c5c5c',
   };
 
   return (
@@ -22,7 +22,7 @@ FlyingObjectBase.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
 };
 
 export default FlyingObjectBase;

@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const CannonBall = props => {
+const CannonBall = (props) => {
   const ballStyle = {
-    fill: "#777",
-    stroke: "#444",
-    strokeWidth: "2px"
+    fill: '#777',
+    stroke: '#444',
+    strokeWidth: '2px',
   };
   return (
     <ellipse
@@ -22,7 +22,7 @@ CannonBall.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
 };
 
 export default CannonBall;

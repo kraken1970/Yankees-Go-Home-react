@@ -1,5 +1,3 @@
-// Этот код извлекает (деструктурирует) четыре атрибута (initialAxis, initialControlPoint, endControlPoint, endAxis) из аргумента функции под названием cubicBezierCurve и передает их в шаблонный литерал, который построит необходимую кубическую кривую Безье.
-
 export const pathFromBezierCurve = cubicBezierCurve => {
   const {
     initialAxis,
@@ -14,7 +12,6 @@ export const pathFromBezierCurve = cubicBezierCurve => {
     ${endingAxis.x} ${endingAxis.y}
   `;
 };
-
 // математическое выражение для расчета угла наклона, основанного на двух точках - вывод значения в градусах
 export const radiansToDegrees = radians => (radians * 180) / Math.PI;
 
@@ -36,7 +33,7 @@ export const getCanvasPosition = event => {
   // mouse position on auto-scaling canvas
   // https://stackoverflow.com/a/10298843/1232793
 
-  const svg = document.getElementById("stupid-go-home-canvas");
+  const svg = document.getElementById("aliens-go-home-canvas");
   const point = svg.createSVGPoint();
 
   point.x = event.clientX;
@@ -44,3 +41,23 @@ export const getCanvasPosition = event => {
   const { x, y } = point.matrixTransform(svg.getScreenCTM().inverse());
   return { x, y };
 };
+
+const degreesToRadian = degrees => (degrees * Math.PI) / 180;
+
+export const calculateNextPosition = (x, y, angle, divisor = 300) => {
+  const realAngle = angle * -1 + 90;
+  const stepsX =
+    radiansToDegrees(Math.cos(degreesToRadian(realAngle))) / divisor;
+  const stepsY =
+    radiansToDegrees(Math.sin(degreesToRadian(realAngle))) / divisor;
+  return {
+    x: x + stepsX,
+    y: y - stepsY
+  };
+};
+
+export const checkCollision = (rectA, rectB) =>
+  rectA.x1 < rectB.x2 &&
+  rectA.x2 > rectB.x1 &&
+  rectA.y1 < rectB.y2 &&
+  rectA.y2 > rectB.y1;
